@@ -1,0 +1,55 @@
+# ─── Entorno y variables de entorno ──────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.env
+
+# ─── Entorno virtual Python ───────────────────────────────────────────────
+venv/
+.venv/
+env/
+ENV/
+
+# ─── Cache de Python ──────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# ─── Base de datos vectorial ChromaDB ────────────────────────────────────
+src/chroma_db/
+
+# ─── IDEs y editores ─────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ─── Sistema operativo ───────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── Logs ────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ─── Testing / Coverage ──────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# ─── Archivos temporales y builds ────────────────────────────────────────
+*.tmp
+*.bak
+dist/
+build/
+*.egg-info/
+
+# ─── Jupyter Notebooks (por si se usan) ──────────────────────────────────
+.ipynb_checkpoints/

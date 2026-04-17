@@ -1,0 +1,202 @@
+================================================================================
+                         CAMPUSLANDS - INFORMACIÓN COMPLETA
+================================================================================
+
+1. ¿QUÉ ES CAMPUSLANDS?
+--------------------------------------------------------------------------------
+Campuslands es un Centro de Entrenamiento y Empleo en tecnología con sede 
+principal en Bucaramanga (Floridablanca), Santander, Colombia. Su modelo se 
+basa en un bootcamp intensivo de aproximadamente 10 meses donde jóvenes, 
+principalmente de estratos 1, 2 y 3, se forman en desarrollo de software, 
+inglés y habilidades socioemocionales para conseguir su primer empleo en 
+tecnología.
+
+Razón social: Campuslands S.A.S. BIC (Sociedad de Beneficio e Interés Colectivo)
+Sector: Formación para el trabajo / Educación tecnológica
+Industria: Consumer Services / EdTech
+
+
+2. HISTORIA Y ORIGEN
+--------------------------------------------------------------------------------
+- En 2017, dos emprendedores colombianos (Diego Fernando Tarazona Pinzón y 
+  Andrés Lizarazo) viajaron a Bangalore, India, y descubrieron cómo la 
+  formación tecnológica podía transformar vidas.
+
+- En 2020, durante la pandemia, un grupo de empresas de software en 
+  Bucaramanga detectó una creciente demanda de programadores que se aceleró 
+  por la digitalización forzada. Comenzaron a formar futuros desarrolladores 
+  y se dieron cuenta de que muchos aspirantes eran jóvenes de bajos recursos.
+
+- Así nació Campuslands: un centro de entrenamiento gratuito para jóvenes 
+  que no pudieron acceder a la educación superior y no estaban trabajando 
+  (población conocida como "ninis").
+
+- En sus inicios, descubrieron que el 85% de sus estudiantes eran de 
+  estratos bajos, sin computador en casa ni acceso a internet.
+
+
+3. FUNDADORES
+--------------------------------------------------------------------------------
+- Diego Fernando Tarazona Pinzón
+  Cargo: CEO y Co-Fundador
+  Profesión: Ingeniero Electrónico
+  Reconocimiento: Elegido como uno de los 75 nuevos líderes que transforman 
+  a Colombia (Revista Semana / El País de España)
+
+- Andrés Lizarazo
+  Cargo: Co-Fundador
+
+- Diego Pinzón (Diego Tarazona Pinzón en registros formales)
+  Formación: MBA en Administración de Empresas (UNAB) y MBA en Gerencia 
+  de Negocios (UIS)
+
+
+4. UBICACIÓN Y SEDES
+--------------------------------------------------------------------------------
+Sede Principal:
+  Zona Franca Santander, Edificio Zenith, Piso 6
+  Floridablanca, Santander, Colombia
+
+Sede Bogotá (alianza con Universidad EAN):  
+  "EAN Campuslands" - Primer centro de entrenamiento y empleo tech en Bogotá
+  Sedes EAN: Carrera 11 No. 78-47 (Legacy), Calle 79 #11-45 (Fundadores),
+  Calle 71 #9-84 (Av. Chile)
+
+Expansión a Norte de Santander:
+  - Tibú: Alianza con Uniminuto para formar 70 jóvenes (desde dic. 2023)
+  - Cúcuta: Planes de expansión con alianzas con Comfanorte y CENS (Grupo EPM)
+
+Alianza departamental:
+  - Convenio "Santander Programando Futuro, Jóvenes con Propósito" con la 
+    Gobernación de Santander, ASPAS y Campuslands para 200 jóvenes.
+
+Espacio de Coworking:
+  Campuslands también ofrece un espacio de coworking en su sede de 
+  Bucaramanga.
+
+
+5. MODELO EDUCATIVO
+--------------------------------------------------------------------------------
+Tipo: Bootcamp intensivo presencial
+Duración: Aproximadamente 10 meses
+Costo: Gratuito para los estudiantes (financiado por becas y patrocinios)
+Intensidad: Los estudiantes permanecen hasta 15 horas diarias en el campus
+
+El modelo se diferencia de la formación tradicional porque no solo capacita 
+al joven, sino que también lo conecta con su primer empleo.
+
+Tres ejes de formación:
+
+  a) PROGRAMACIÓN
+     - Desarrollo web (front-end y back-end)
+     - Desde fundamentos hasta herramientas avanzadas
+     - Tecnologías demandadas por la industria
+     - Inteligencia Artificial
+     - Preparación para pruebas técnicas de empresas
+
+  b) INGLÉS
+     - Formación con proyección al nivel B1
+     - Considerado clave porque abre oportunidades internacionales y 
+       mejora los salarios
+
+  c) HABILIDADES SOCIOEMOCIONALES (Soft Skills)
+     - Inteligencia emocional
+     - Trabajo en equipo
+     - Comunicación efectiva
+     - Liderazgo
+
+
+6. ¿A QUIÉN VA DIRIGIDO?
+--------------------------------------------------------------------------------
+- Jóvenes que no pudieron acceder a educación superior
+- Jóvenes de estratos 1, 2 y 3
+- No se requieren conocimientos previos en programación
+- Población "nini" (ni estudian ni trabajan, entre 17 y 29 años)
+- Mujeres y madres que buscan oportunidades en tecnología
+
+
+7. RESULTADOS E IMPACTO
+--------------------------------------------------------------------------------
+- Campers (estudiantes) contratados en empresas reales
+- Alianza con empresas nacionales e internacionales (España, Francia, 
+  Suiza, Estados Unidos, Latinoamérica)
+- Los campers son contratados con salarios superiores al salario mínimo 
+  legal vigente en Colombia
+- Alto porcentaje de contratación en los primeros 3 meses después de 
+  graduarse
+- Ejemplo destacado: 5 programadoras de 18 años contratadas por una 
+  multinacional francesa
+- Caso de éxito con CodeSignal: Laia Carrillo, camper que obtuvo el 
+  puntaje más alto en un desafío de programación (GCA)
+
+
+8. ALIADOS Y EMPRESAS VINCULADAS
+--------------------------------------------------------------------------------
+- Universidad EAN (Bogotá)
+- Uniminuto (Tibú, Norte de Santander)
+- Gobernación de Santander
+- ASPAS (Asociación Social para Apoyar a Santander)
+- Comfanorte (Caja de Compensación de Norte de Santander)
+- CENS - Centrales Eléctricas de Norte de Santander (Grupo EPM)
+- CodeSignal (plataforma internacional de evaluación de código)
+- Empresas internacionales de software con sede en Latinoamérica, 
+  Estados Unidos, Francia y Suiza
+- Múltiples empresas tech que contratan directamente a los campers
+
+
+9. VALORES CORPORATIVOS
+--------------------------------------------------------------------------------
+- Innovación constante: Desafiar lo convencional
+- Trabajo en equipo: Unir habilidades y talentos
+- Responsabilidad con propósito: Generar cambio real en la sociedad
+- Adaptabilidad: Evolucionar con agilidad
+- Transparencia: Honestidad en procesos y decisiones
+
+
+10. MISIÓN Y VISIÓN
+--------------------------------------------------------------------------------
+Misión: Democratizar el talento tech y transformar vidas. Formar a la 
+próxima generación de desarrolladores con una educación integral y humana. 
+Impulsar el crecimiento de jóvenes como agentes de cambio, listos para 
+liderar la transformación tecnológica.
+
+Visión: Ser el mayor motor de talento tech en Colombia. Convertirse en el 
+referente en la formación de desarrolladores, creativos digitales y 
+expertos en marketing, impulsando mentes brillantes en espacios de 
+innovación y aprendizaje ágil.
+
+
+11. DATOS DE CONTACTO
+--------------------------------------------------------------------------------
+Sitio web: https://campuslands.com
+Correo: contacto@campuslands.com
+WhatsApp: +57 311 880 7659 / +57 300 971 1559 / +57 316 052 2555
+Instagram: @campuslands (18K+ seguidores)
+Facebook: /Campuslands
+LinkedIn: /company/campuslands
+YouTube: @Campuslandsbic
+
+Lema / Hashtag: #HackeandoVidas
+Los estudiantes son llamados: "Campers"
+
+
+12. PROCESO DE INSCRIPCIÓN
+--------------------------------------------------------------------------------
+1. Te inscribes en la plataforma
+2. Participas en una entrevista para conocerte y explorar cómo encajas 
+   en la comunidad
+3. Recibes un contacto para confirmar tu ingreso y los siguientes pasos
+4. Accedes con opciones de beca o patrocinio
+
+
+13. CONTEXTO SOCIAL
+--------------------------------------------------------------------------------
+Según Diego Tarazona, en Colombia solo 4.5 de cada 10 estudiantes que se 
+gradúan del colegio público acceden a educación superior, y solo la mitad 
+de ellos termina. Esto deja a millones de jóvenes sin opciones. Colombia 
+tiene más de 3 millones de personas entre 17 y 29 años que ni estudian 
+ni trabajan.
+
+Campuslands nació para atacar este problema: desarrollar habilidades 
+digitales que permitan a estos jóvenes conseguir empleo en menos de un 
+año, con salarios que les permitan romper círculos de pobreza.
