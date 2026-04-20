@@ -1,6 +1,7 @@
 # Servidor API
 fastapi
 uvicorn
+gunicorn
 
 # Inteligencia Artificial y LangChain
 langchain

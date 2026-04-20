@@ -1,13 +1,30 @@
+import os
+from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from src.processor import load_and_split_docs
 from src.database import save_to_db
 from src.chatbot import generate_response
+from src.config import Config
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Verificar si la base de datos existe o está vacía
+    if not os.path.exists(Config.CHROMA_PATH) or not os.listdir(Config.CHROMA_PATH):
+        print("--- Render Detectado o BD Vacía: Iniciando indexación automática ---")
+        try:
+            chunks = load_and_split_docs()
+            save_to_db(chunks)
+            print(f"--- Indexación completada: {len(chunks)} fragmentos procesados ---")
+        except Exception as e:
+            print(f"--- Error en indexación automática: {e} ---")
+    yield
 
 app = FastAPI(
     title="Campuslands AI API",
-    description="API para el ChatBot de Campuslands usando RAG con Gemini y ChromaDB"
+    description="API para el ChatBot de Campuslands usando RAG con Gemini y ChromaDB",
+    lifespan=lifespan
 )
 
 # Configuración de CORS para permitir conexión con el frontend

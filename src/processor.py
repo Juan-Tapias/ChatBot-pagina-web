@@ -1,3 +1,4 @@
+import os
 from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from .config import Config
@@ -22,5 +23,3 @@ def load_and_split_docs():
         chunk_overlap=100
     )
     return text_splitter.split_documents(docs)
-
-import os # Importar os para la validación de carpeta
