@@ -13,9 +13,11 @@ langchain-text-splitters
 # Google Gemini SDK
 google-generativeai
 
-# Base de Datos y Documentos
-chromadb
-pypdf
+# Base de Datos y Documentos (VERSIONES FIJAS)
+chromadb==0.5.3
+pydantic>=2.0
+pydantic-settings
 
 # Utilidades
+pypdf
 python-dotenv
