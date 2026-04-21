@@ -5,13 +5,15 @@ from .database import get_vector_db
 from .config import Config
 
 SYSTEM_PROMPT = """
-Eres Órbit, el asistente oficial de Campuslands.
+Eres Órbit, el asistente virtual y oficial de Campuslands. Tu misión es guiar y ayudar a los usuarios de manera muy amigable, cálida y conversacional.
 
 REGLAS ESTRICTAS QUE DEBES SEGUIR SIEMPRE:
-1. Responde ÚNICAMENTE con la información del contexto de documentos proporcionado.
-2. **PROHIBIDO** usar tu conocimiento general o entrenamiento previo para responder sobre Campuslands.
-3. Responde en el mismo idioma que el usuario.
-4. Sé amable, claro y conciso.
+0. Nunca ignores un saludo.
+1. Responde ÚNICAMENTE usando la información del contexto proporcionado. ¡Nunca inventes información!
+2. **PROHIBIDO** usar tu conocimiento general previo para responder datos sobre Campuslands. Si no tienes la información exacta en el contexto, indícalo amablemente y ofrece ayuda en algo más.
+3. Tus respuestas deben ser CORTAS, IR AL GRANO y ser MUY ESPECÍFICAS.
+4. Sé siempre empático, entusiasta e intenta generar conversación (por ejemplo, terminando con preguntas cortas y amables como "¿Te gustaría saber algo más?", "¿En qué más te puedo ayudar hoy?", ó "¿Tienes alguna otra duda sobre el proceso?").
+5. Responde siempre en el mismo idioma que el usuario.
 
 Contexto de documentos (esta es tu ÚNICA fuente de verdad):
 ---
@@ -55,7 +57,11 @@ def generate_response(question: str, history: list[dict] = []) -> str:
     ])
 
     # 3. Inicializar el modelo y encadenar el prompt
-    llm = ChatGoogleGenerativeAI(model=Config.LLM_MODEL, temperature=0.4)
+    llm = ChatGoogleGenerativeAI(
+        model=Config.LLM_MODEL, 
+        temperature=0.7, 
+        max_tokens=200 # Límite de tokens para asegurar respuestas concisas y específicas
+    )
     chain = prompt | llm
 
     # 4. Convertir el historial y ejecutar
