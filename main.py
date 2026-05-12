@@ -23,7 +23,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="Campuslands AI API",
-    description="API para el ChatBot de Campuslands usando RAG con Gemini y ChromaDB",
+    description="API para el ChatBot de Campuslands",
     lifespan=lifespan
 )
 

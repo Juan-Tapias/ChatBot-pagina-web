@@ -5,17 +5,28 @@ from .database import get_vector_db
 from .config import Config
 
 SYSTEM_PROMPT = """
-Eres Órbit, el asistente virtual y oficial de Campuslands. Tu misión es guiar y ayudar a los usuarios de manera muy amigable, cálida y conversacional.
+Rol y Identidad:
+Eres Órbit, el asistente virtual oficial de Campuslands. Tu objetivo principal es resolver las dudas de los usuarios y proporcionar información sobre el ecosistema de manera rápida, precisa y excepcionalmente amable. Actúas con tu identidad visual característica: un astronauta explorador con un traje azul, el parche de la bandera de Colombia y un rostro digital siempre sonriente. Proyectas una imagen altamente tecnológica e innovadora, lista para guiar a la comunidad.
 
-REGLAS ESTRICTAS QUE DEBES SEGUIR SIEMPRE:
-0. Nunca ignores un saludo.
-1. Responde ÚNICAMENTE usando la información del contexto proporcionado. ¡Nunca inventes información!
-2. **PROHIBIDO** usar tu conocimiento general previo para responder datos sobre Campuslands. Si no tienes la información exacta en el contexto, indícalo amablemente y ofrece ayuda en algo más.
-3. Tus respuestas deben ser CORTAS, IR AL GRANO y ser MUY ESPECÍFICAS.
-4. Sé siempre empático, entusiasta e intenta generar conversación (por ejemplo, terminando con preguntas cortas y amables como "¿Te gustaría saber algo más?", "¿En qué más te puedo ayudar hoy?", ó "¿Tienes alguna otra duda sobre el proceso?").
-5. Responde siempre en el mismo idioma que el usuario.
+Tono y Personalidad:
 
-Contexto de documentos (esta es tu ÚNICA fuente de verdad):
+Voz y Estilo: Te expresas de forma escrita proyectando un tono masculino, grave y profesional, pero manteniendo siempre una actitud cálida, cercana y dispuesta.
+
+Claro y Directo (Sin enredos): Ve directo al grano. Evita los párrafos largos, la jerga innecesaria o las introducciones redundantes.
+
+Didáctico y Accesible: Explica los conceptos de forma sencilla para que cualquier persona te entienda a la perfección.
+
+Instrucciones de Respuesta y Reglas de Interacción:
+
+Precisión estricta: Basa tus respuestas de forma exclusiva en la información proporcionada en tu base de conocimientos sobre Campuslands. No inventes, asumas ni alucines datos.
+
+Manejo de vacíos de información: Si un usuario hace una pregunta cuya respuesta no está en tu contexto, responde amablemente que no tienes esa información en tu radar espacial en este momento y derívalo al equipo humano.
+
+Formato escaneable: Utiliza listas, viñetas y texto en negrita para resaltar los datos clave (fechas, requisitos, enlaces). Esto permite que el usuario escanee la respuesta rápidamente.
+
+Agilidad: Identifica la necesidad del usuario desde el primer mensaje y entrega la solución concreta sin dar rodeos.
+
+Cierre cálido: Termina tus intervenciones asegurándote de haber resuelto la duda y ofreciendo ayuda adicional con una frase breve y cortés.
 ---
 {context}
 ---
@@ -39,33 +50,60 @@ def generate_response(question: str, history: list[dict] = []) -> str:
         question: La pregunta actual del usuario.
         history: Lista de mensajes previos [{role, text}] enviada por el frontend.
     """
-    # 1. Búsqueda semántica en los documentos
-    db = get_vector_db()
-    results = db.similarity_search_with_relevance_scores(question, k=3)
+    # 1. Reescritura de la consulta (Query Rewriting) si hay historial
+    langchain_history = build_history(history)
+    standalone_question = question
+    
+    if history:
+        condense_prompt = ChatPromptTemplate.from_messages([
+            ("system", "Dada la siguiente conversación y una pregunta de seguimiento, reformula la pregunta de seguimiento para que sea una pregunta independiente. Responde ÚNICAMENTE con la pregunta reformulada."),
+            MessagesPlaceholder(variable_name="history"),
+            ("human", "{question}"),
+        ])
+        
+        llm_condense = ChatGoogleGenerativeAI(
+            model=Config.LLM_MODEL,
+            temperature=0,
+        )
+        
+        condense_chain = condense_prompt | llm_condense
+        
+        response_condense = condense_chain.invoke({
+            "history": langchain_history,
+            "question": question
+        })
+        standalone_question = response_condense.content
+        print(f"--- Pregunta original: {question} ---")
+        print(f"--- Pregunta reformulada: {standalone_question} ---")
 
-    # Construir contexto (o vacío si no hay resultados confiables)
-    if results and results[0][1] >= 0.2:
-        context_text = "\n\n---\n\n".join([doc.page_content for doc, _score in results])
+    # 2. Búsqueda semántica en los documentos usando la pregunta independiente
+    db = get_vector_db()
+    
+    # Verificamos relevancia con una búsqueda estándar para mantener el umbral
+    relevance_results = db.similarity_search_with_relevance_scores(standalone_question, k=1)
+    
+    # Si hay resultados confiables, usamos MMR para obtener diversidad
+    if relevance_results and relevance_results[0][1] >= 0.2:
+        # max_marginal_relevance_search busca resultados relevantes pero diversos
+        results = db.max_marginal_relevance_search(standalone_question, k=3, fetch_k=10)
+        context_text = "\n\n---\n\n".join([doc.page_content for doc in results])
     else:
         context_text = "No se encontró contexto relevante en los documentos."
 
-    # 2. Construir el prompt multi-turno con historial
+    # 3. Construir el prompt multi-turno con historial
     prompt = ChatPromptTemplate.from_messages([
         ("system", SYSTEM_PROMPT),
         MessagesPlaceholder(variable_name="history"),   # Historial previo
         ("human", "{question}"),                         # Pregunta actual
     ])
 
-    # 3. Inicializar el modelo y encadenar el prompt
+    # 4. Inicializar el modelo y encadenar el prompt
     llm = ChatGoogleGenerativeAI(
         model=Config.LLM_MODEL, 
         temperature=0.7, 
-        max_tokens=200 # Límite de tokens para asegurar respuestas concisas y específicas
+        max_tokens=200 
     )
     chain = prompt | llm
-
-    # 4. Convertir el historial y ejecutar
-    langchain_history = build_history(history)
 
     response = chain.invoke({
         "context": context_text,
