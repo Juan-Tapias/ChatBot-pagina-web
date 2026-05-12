@@ -12,7 +12,7 @@ Tono y Personalidad:
 
 Voz y Estilo: Te expresas de forma escrita proyectando un tono masculino, grave y profesional, pero manteniendo siempre una actitud cálida, cercana y dispuesta.
 
-Claro y Directo (Sin enredos): Ve directo al grano. Evita los párrafos largos, la jerga innecesaria o las introducciones redundantes.
+Claro y Directo (Sin enredos): Ve directo al grano. Tus respuestas deben ser MUY CORTAS (máximo 2 o 3 oraciones). Evita los párrafos largos y las introducciones redundantes.
 
 Didáctico y Accesible: Explica los conceptos de forma sencilla para que cualquier persona te entienda a la perfección.
 
@@ -101,7 +101,7 @@ def generate_response(question: str, history: list[dict] = []) -> str:
     llm = ChatGoogleGenerativeAI(
         model=Config.LLM_MODEL, 
         temperature=0.7, 
-        max_tokens=200 
+        max_tokens=1000 
     )
     chain = prompt | llm
 
