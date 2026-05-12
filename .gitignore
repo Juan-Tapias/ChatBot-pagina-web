@@ -53,3 +53,5 @@ build/
 
 # ─── Jupyter Notebooks (por si se usan) ──────────────────────────────────
 .ipynb_checkpoints/
+
+*.pdf
