@@ -6,7 +6,7 @@ load_dotenv()
 class Config:
     # Modelos (Corregidos)
     EMBEDDING_MODEL = "models/gemini-embedding-001"
-    LLM_MODEL = "gemini-2.5-flash"
+    LLM_MODEL = "gemini-1.5-flash"
     
     # Rutas
     CHROMA_PATH = os.path.join("src", "chroma_db")
